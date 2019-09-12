@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#172d4d">
+
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#5e72e4">
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:background="@drawable/firstlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="300px"
+                    android:layout_height="300px"
+                    android:layout_marginBottom="4px"
+                    android:layout_marginTop="50px"
+                    android:src="@drawable/user"/>
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/verified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_checked"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="Yash Jaiswal"
+                    android:textColor="@color/colorTitle"
+                    android:layout_marginBottom="5px"/>
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="50px"
+                android:paddingTop="70px"
+                android:paddingBottom="70px"
+                android:gravity="center"
+                android:background="@drawable/secondlayer">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitle"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rank"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitleWhite"/>
+
+                </LinearLayout>
+                
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px"
+                    android:background="@color/colorBlack"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:id="@+id/lead"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitle"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leads"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitleWhite" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px"
+                    android:background="@color/colorBlack"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginRight="-30dp">
+
+                    <TextView
+                        android:id="@+id/leadc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitle"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leads "
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitleWhite"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Converted"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSubTitleWhite"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="50px"
+            android:layout_marginLeft="120px">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20px">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:text="Email"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:text="abc@xyz.com"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20px">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:text="Region"/>
+
+                <TextView
+                    android:id="@+id/region"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:text="karnatka"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20px">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:text="Level"/>
+
+                <TextView
+                    android:id="@+id/Rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteTitle"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:text="Beginner"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Signout"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300px"
+            android:text="Signout"
+            android:layout_gravity="center"
+            android:background="@drawable/sign_in_button_background"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

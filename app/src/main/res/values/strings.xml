@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">final</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="savings">Syndicate Bank provides Savings/Current Account to cater to the needs of individuals or firms as per their requirements </string>
+    <string name="agriculturalLoan">Indian agricultural sector accounts for 18% of India\'s GDP and provides employment to 50% of the countries workforce.Schemes like SYND KISAN and others provides financial suport to farmers in the hour of need</string>
+    <string name="retailLoan">The Bank is meeting varied personal credit card requirements of different class of people through various loan schemes like SYND SWARNA and other under personal banking </string>
+    <string name="educationLoan">Syndicate Bank provides numerous education loans to cater the needs of consumers/students under scheme like SYND VIDYA and many others</string>
+    <string name="btschallenge">Its time for the students to head back to their colleges and schools.Make use of this month and successfully convert 45 leads under Educational Loan scheme</string>
+    <string name="MonsoonChallenge">In this season of rain,can you prove your mettle?Complete the Monsoon Challenge by sucessfully converting 25 leads under Agricultural Loans scheme.</string>
+    <string name="MonthlyChallenge">Regular monthly Challenge for the month of August. Showcase your Business skills and win points!</string>
+    <string name="educationalLoan">Syndicate Bank provides numerous education loans to cater the needs of consumers/students under schemes like Synd Vidya and many others.</string>
+    <string name="fd">A regular interest earning scheme which is flexible and convenient. It ensures that your money never remains idle.</string>
+    <string name="smeLoans">Syndicate Banks provides various schemes like SyndUdyog, SyndVyapar and many others for Micro, Small, and Medium Entreprises (MSME).</string>
+    <string name="corporate">The bank extends finance to corporates for their working capital as well as term loan requirements. Apart from normal Branch network, Bank has 26 mid corporate Branches, 9 Large corporate Branches to cater to the need of corporate clients.</string>
+    <string name="psl">Prirority Sector loans constitute of schemes like the Solar Scheme,etc. that are given to sectors important for the development of the basic needs of the country and are to be given priority over other sectors.</string>
+    <string name="facebook_app_id">979950022336641</string>
+    <string name="fb_login_protocol_scheme">fb979950022336641</string>
+
+
+</resources>

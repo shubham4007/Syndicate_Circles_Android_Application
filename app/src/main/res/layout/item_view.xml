@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/name_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:text="User name"
+            />
+
+        <TextView
+            android:id="@+id/email_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:text="User name"
+            android:layout_below="@id/name_textView"
+            />
+
+        <TextView
+            android:id="@+id/age_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:text="User name"
+            android:layout_below="@id/email_textView"
+            />
+        <TextView
+            android:id="@+id/product_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:text="User name"
+            android:layout_below="@id/age_textView"
+            />
+        <TextView
+            android:id="@+id/date_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:text="User name"
+            android:layout_below="@id/product_textView"
+            />
+        <TextView
+            android:id="@+id/refer_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="#000"
+            android:textAllCaps="true"
+            android:text="User name"
+            android:layout_below="@id/date_textView"
+            />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
