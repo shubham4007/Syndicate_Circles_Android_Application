@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#172d4d">
+        android:background="#FFFFFF">
 
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#5e72e4">
+            android:background="#7289DA">
 
 
             <LinearLayout
@@ -86,15 +86,16 @@
                         android:id="@+id/points"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:text="0"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/colorSubTitle"/>
+                        android:textColor="@color/colorSubTitleWhite"/>
 
                     <TextView
+                        android:id="@+id/r1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rank"
+                        android:text="Points"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorSubTitleWhite"/>
@@ -123,9 +124,10 @@
                         android:id="@+id/lead"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/colorSubTitle"/>
+                        android:textColor="@color/colorSubTitleWhite"/>
 
                     <TextView
+                        android:id="@+id/r2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Leads"
@@ -156,9 +158,10 @@
                         android:text=""
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/colorSubTitle"/>
+                        android:textColor="@color/colorSubTitleWhite"/>
 
                     <TextView
+                        android:id="@+id/r3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Leads "
@@ -166,6 +169,7 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorSubTitleWhite"/>
                     <TextView
+                        android:id="@+id/r4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Converted"
@@ -176,110 +180,143 @@
                 </LinearLayout>
 
             </LinearLayout>
-        
-        
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="120px"
             android:orientation="vertical"
-            android:paddingTop="50px"
-            android:layout_marginLeft="120px">
+            android:paddingTop="50px">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="20px">
+                android:layout_margin="20px"
+                android:orientation="vertical">
 
 
                 <TextView
 
+                    android:id="@+id/email1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="Email"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="Email"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="abc@xyz.com"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="15sp"
-                    android:textStyle="normal"
-                    android:text="abc@xyz.com"/>
+                    android:textStyle="normal" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="20px">
+                android:layout_margin="20px"
+                android:orientation="vertical">
 
 
                 <TextView
-
+                    android:id="@+id/region1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="Region"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="Region"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="karnatka"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="15sp"
-                    android:textStyle="normal"
-                    android:text="karnatka"/>
+                    android:textStyle="normal" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="20px">
+                android:layout_margin="20px"
+                android:orientation="vertical">
 
 
                 <TextView
+                    android:id="@+id/level1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="Level"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="Level"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Rank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhiteTitle"
+                    android:text="Beginner"
+                    android:textColor="@color/colorSubTitleWhite"
                     android:textSize="15sp"
-                    android:textStyle="normal"
-                    android:text="Beginner"/>
+                    android:textStyle="normal" />
 
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_margin="20px"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payment"
+                    android:background="@drawable/sign_in_button_background"
+                    android:text="Payment Request" />
 
             </LinearLayout>
 
 
 
+
+            <Button
+                android:id="@+id/pasyment"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="300px"
+                android:background="@drawable/sign_in_button_background"
+                android:text="Signout" />
+            <Button
+                android:id="@+id/Signout"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-300px"
+                android:layout_marginLeft="-30dp"
+                android:background="@drawable/sign_in_button_background"
+                android:text="Signout" />
+
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/Signout"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300px"
-            android:text="Signout"
-            android:layout_gravity="center"
-            android:background="@drawable/sign_in_button_background"/>
+
 
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

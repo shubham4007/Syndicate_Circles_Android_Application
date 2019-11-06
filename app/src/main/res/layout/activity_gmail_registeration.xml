@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GmailRegisteration"
-    android:background="@mipmap/registeration">
+    android:background="@mipmap/registeratiom">
 
 
 
@@ -28,6 +28,9 @@
         app:layout_constraintVertical_bias="0.647" />
 
     <EditText
+        android:background="@drawable/textviewshape"
+        android:alpha="0.23"
+        android:textColorHint="#000000"
         android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +41,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Name"
-        android:textColorHint="#ffff"
+
         app:layout_constraintBottom_toTopOf="@+id/Region"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +51,9 @@
         />
 
     <EditText
+        android:background="@drawable/textviewshape"
+        android:alpha="0.23"
+        android:textColorHint="#000000"
         android:id="@+id/Region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

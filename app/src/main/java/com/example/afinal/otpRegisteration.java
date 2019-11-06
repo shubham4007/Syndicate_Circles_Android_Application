@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,6 +35,10 @@ public class otpRegisteration extends AppCompatActivity {
     EditText textInputEmail;
     EditText Region;
 
+    Button button;
+
+    Typeface dys;
+
     public void onBackPressed() {
 
         firebaseAuth.signOut();
@@ -49,10 +56,34 @@ public class otpRegisteration extends AppCompatActivity {
         textInputname =(EditText) findViewById(R.id.editText1);
         textInputEmail =(EditText) findViewById(R.id.editText4);
         Region =(EditText) findViewById(R.id.editText3);
+        button = findViewById(R.id.register);
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Agent");
 
         agent = new Agent();
+
+        global abc = (global) getApplicationContext();
+        if(abc.getDyslexic()==0||abc.getDyslexic()==2||abc.getDyslexic()==4||abc.getDyslexic()==6||abc.getDyslexic()==8||abc.getDyslexic()==10||abc.getDyslexic()==12||abc.getDyslexic()==14||abc.getDyslexic()==16||abc.getDyslexic()==18||abc.getDyslexic()==20||abc.getDyslexic()==22||abc.getDyslexic()==24||abc.getDyslexic()==26||abc.getDyslexic()==28||abc.getDyslexic()==30||abc.getDyslexic()==32||abc.getDyslexic()==34) {
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
+            textInputname.setTypeface(dys);
+            textInputEmail.setTypeface(dys);
+            Region.setTypeface(dys);
+            button.setTypeface(dys);
+
+
+
+
+        }else{
+
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/dyslexic.ttf");
+            textInputname.setTypeface(dys);
+            textInputEmail.setTypeface(dys);
+            Region.setTypeface(dys);
+            button.setTypeface(dys);
+
+        }
 
         firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -127,16 +158,23 @@ public class otpRegisteration extends AppCompatActivity {
         Global.setEmail(textInputEmail.getText().toString());
         Global.setRegion(Region.getText().toString());
 
-        userid = textInputEmail.getText().toString();
-        userid = userid.replace(".","%");
+       try {
+           userid = textInputEmail.getText().toString();
+           userid = userid.replace(".","%");
+       }catch (NullPointerException ig){
+           Log.i("abc","abc");}
+
 
 
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                getDetails();
-                ref.child(userid).setValue(agent);
+                try {
+                    getDetails();
+                    ref.child(userid).setValue(agent);
+                }catch (NullPointerException ig){Log.i("abc","abc");}
+
                 startActivity(new Intent(otpRegisteration.this,Dashboard.class));
 
 

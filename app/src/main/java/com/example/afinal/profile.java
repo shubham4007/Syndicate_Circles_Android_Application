@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -40,14 +41,25 @@ public class profile extends AppCompatActivity {
     TextView point;
     TextView rank;
 
+    TextView region1;
+    TextView email1;
+    TextView level1;
+    TextView r1;
+    TextView r2;
+    TextView r3;
+    TextView r4;
+
     String Lead;
     String conv;
     String points;
     String userid;
+    Button payment;
 
     ImageView verified;
     FirebaseDatabase database;
     DatabaseReference ref;
+
+    Typeface dys;
 
 
 
@@ -75,6 +87,14 @@ public class profile extends AppCompatActivity {
         point = (TextView) findViewById(R.id.points);
         verified = (ImageView) findViewById(R.id.verified);
         rank = (TextView) findViewById(R.id.Rank);
+
+        email1 = (TextView) findViewById(R.id.email1);
+        region1 = (TextView) findViewById(R.id.region1);
+        level1 = (TextView) findViewById(R.id.level1);
+        r1 = (TextView)findViewById(R.id.r1);
+        r2 = (TextView)findViewById(R.id.r2);
+        r3 = (TextView)findViewById(R.id.r3);
+        r4 = (TextView)findViewById(R.id.r4);
 
         global abf = (global)getApplicationContext();
         Name = abf.getName();
@@ -123,18 +143,20 @@ public class profile extends AppCompatActivity {
         });
 
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference("Agents");
+        ref = database.getReference("Agent");
 
         try {
             userid = Email;
             userid = userid.replace(".", "%");
-        }catch(NullPointerException ignored){}
+
+
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                try {
+                try {global abc = (global) getApplicationContext();
                     leadConv.setText(dataSnapshot.child("leadConverted").getValue().toString());
-                }catch (NullPointerException ignored){}
+                    abc.setLeadConverted(dataSnapshot.child("leadConverted").getValue().toString());
+                    }catch (NullPointerException ignored){}
 
 
             }
@@ -172,7 +194,58 @@ public class profile extends AppCompatActivity {
 
             }
         });
+        }catch(NullPointerException ignored){}
+
+        global abc = (global) getApplicationContext();
+
+        if(abc.getDyslexic()==1){
+            dys = Typeface.createFromAsset(getAssets(),"fonts/dyslexic.ttf");
+            name.setTypeface(dys);
+            email.setTypeface(dys);
+            region.setTypeface(dys);
+            leadConv.setTypeface(dys);
+            lead.setTypeface(dys);
+            point.setTypeface(dys);
+            rank.setTypeface(dys);
+            signout.setTypeface(dys);
+            email1.setTypeface(dys);
+            region1.setTypeface(dys);
+            level1.setTypeface(dys);
+            r1.setTypeface(dys);
+            r2.setTypeface(dys);
+            r3.setTypeface(dys);
+            r4.setTypeface(dys);
+        }
+
+        payment = findViewById(R.id.payment);
+
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                point.setText("0");
+                Toast.makeText(profile.this, "clicked", Toast.LENGTH_SHORT).show();
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        ref.child(userid).child("payment").setValue("Requested");
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+
+
 
 
     }
+
+
+
 }

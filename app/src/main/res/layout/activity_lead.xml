@@ -15,6 +15,7 @@
         android:paddingTop="15dp">
 
         <TextView
+            android:id="@+id/c1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -30,6 +31,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/inp_btn"
             android:gravity="center"
+            android:inputType="textPersonName"
             android:hint="Customer Full Name"
             android:padding="8dp"
             android:textColorHint="#626262"

@@ -11,6 +11,15 @@ public class Agent {
         private String leadConverted = "0";
         private String lead = "0";
         private String points = "0";
+        private String payment = "N.A.";
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
 
     public String getLeadConverted() {
         return leadConverted;

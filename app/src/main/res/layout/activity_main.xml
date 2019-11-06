@@ -91,8 +91,10 @@
             app:srcCompat="@drawable/ic_call_black_24dp" />
 
         <LinearLayout
-            android:layout_width="251dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="169dp"
             android:orientation="horizontal"
@@ -112,9 +114,9 @@
                     android:layout_marginTop="8dp"
 
                     android:layout_marginBottom="8dp"
-                    android:text="Syndicate"
+                    android:text="Wiki"
                     android:textColor="#ef603e"
-                    android:textSize="30dp"
+                    android:textSize="50dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -124,15 +126,16 @@
                     app:layout_constraintVertical_bias="0.029" />
 
                 <TextView
+                    android:id="@+id/circle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Circles"
+                    android:text="Pills"
                     android:textColor="#ffff"
-                    android:textSize="30dp"
+                    android:textSize="50dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -209,7 +212,7 @@
             android:alpha="0.23"
             android:background="@drawable/textviewshape"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.688"
@@ -235,6 +238,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.718" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interface for Dyslexic Users"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.787"
+            android:textColor="@color/colorWhiteTitle"
+            android:textSize="17dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

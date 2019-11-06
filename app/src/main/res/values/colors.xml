@@ -8,7 +8,7 @@
     <color name="green">#00bfa5</color>
     <color name="pink">#fe104d</color>
     <color name="lightgray">#ededed</color>
-    <color name="Toolbar_background">#0783E2</color>
+    <color name="Toolbar_background">#8a56ab</color>
 
     <color name="colorLayerBlack">#8a56ab</color>
     <color name="colorBlack">#241333</color>
@@ -16,4 +16,7 @@
     <color name="colorSubTitle">#c5c9cf</color>
     <color name="colorWhiteTitle">#ffffff</color>
     <color name="colorSubTitleWhite">#172d4d</color>
+
+    <color name="colorHintTextLight">#80FFFFFF</color>
+    <color name="colorPrimaryTextLight">#FFFFFF</color>
 </resources>

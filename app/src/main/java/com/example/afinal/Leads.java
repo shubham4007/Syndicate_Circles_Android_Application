@@ -1,13 +1,22 @@
 package com.example.afinal;
 
 public class Leads {
-    private  String name;
-    private  String email;
+    private  String name = "abc";
+    private  String email = "abc@gmail.com";
 
-    private  String age;
-    private  String product;
+    private  String age = "39";
+    private  String product = "CASA";
     private String date;
     private String refer;
+    private String check ;
+
+    public String getCheck() {
+        return check;
+    }
+
+    public void setCheck(String check) {
+        this.check = check;
+    }
 
     public Leads(String name, String email, String age, String product, String date, String refer) {
         this.name = name;

@@ -10,6 +10,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference reference;
     private String userid;
     TextView Register;
+    TextView textView;
+    TextView textView2;
     ImageView gmail;
     String name;
     String email;
@@ -73,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
     String Gmailshow;
     String Gmailshow2;
     int count2 = 0;
+    Typeface dys;
+    int count3 = 0;
+
+    Button signin1;
+    Button signin;
+    TextView textView3;
+    TextView textView4;
+    TextView circles;
 
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 0 ;
@@ -134,6 +145,54 @@ public class MainActivity extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.password);
         Register = (TextView) findViewById(R.id.register);
 
+        textView = (TextView) findViewById(R.id.textView);
+        textView2 = (TextView) findViewById(R.id.textView2);
+        textView3 = (TextView) findViewById(R.id.textView3);
+        textView4 = (TextView) findViewById(R.id.textView4);
+        circles = (TextView) findViewById(R.id.circle);
+        signin1 = (Button) findViewById(R.id.signin1);
+        signin = (Button) findViewById(R.id.signin);
+        final global abc  = (global) getApplicationContext();
+
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                if(abc.getDyslexic()==0||abc.getDyslexic()==2||abc.getDyslexic()==4||abc.getDyslexic()==6||abc.getDyslexic()==8||abc.getDyslexic()==10||abc.getDyslexic()==12||abc.getDyslexic()==14||abc.getDyslexic()==16||abc.getDyslexic()==18||abc.getDyslexic()==20||abc.getDyslexic()==22||abc.getDyslexic()==24||abc.getDyslexic()==26||abc.getDyslexic()==28||abc.getDyslexic()==30||abc.getDyslexic()==32||abc.getDyslexic()==34) {
+
+                    dys = Typeface.createFromAsset(getAssets(), "fonts/dyslexic.ttf");
+                    textView.setTypeface(dys);
+                    textView2.setTypeface(dys);
+                    textView3.setTypeface(dys);
+                    textView4.setTypeface(dys);
+                    circles.setTypeface(dys);
+                    signin1.setTypeface(dys);
+                    signin.setTypeface(dys);
+                    Register.setTypeface(dys);
+                    textView2.setText("Normal Interface");
+                    count3++;
+                }else{
+
+                    dys = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
+                    textView.setTypeface(dys);
+                    textView2.setTypeface(dys);
+                    textView3.setTypeface(dys);
+                    textView4.setTypeface(dys);
+                    circles.setTypeface(dys);
+                    signin1.setTypeface(dys);
+                    signin.setTypeface(dys);
+                    Register.setTypeface(dys);
+                    textView2.setText("Interface for Dyslexic Users");
+                    count3++;
+                }
+
+                abc.setDyslexic(count3);
+
+            }
+        });
+
 
 
                 Register.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +201,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,Registration.class));
             }
         });
+                signin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        signin();
+                    }
+                });
 
         TextView OTP = (TextView) findViewById(R.id.otp);
         OTP.setOnClickListener(new View.OnClickListener() {
@@ -733,7 +798,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        public  void signin(View view){
+        public  void signin(){
 
 
 

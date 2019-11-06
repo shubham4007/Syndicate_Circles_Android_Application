@@ -34,7 +34,8 @@
                 android:text="Enter your mobile number"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/text1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,7 +63,8 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="sans-serif"
                 android:text="Tap Next to verify your account with your phone number. You don't need to manualy enter verification code if the number install in this phone..."
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:id="@+id/text2"/>
 
             <Button
                 android:id="@+id/submit1"
@@ -94,6 +96,7 @@
             app:layout_constraintTop_toBottomOf="parent">
 
             <TextView
+                android:id="@+id/c1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enter the code that was send to"
@@ -148,6 +151,7 @@
 
 
             <TextView
+                android:id="@+id/c2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

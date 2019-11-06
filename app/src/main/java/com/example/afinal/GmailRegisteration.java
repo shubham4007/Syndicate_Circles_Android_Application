@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,8 @@ public class GmailRegisteration extends AppCompatActivity {
     Button register;
     private String userid;
 
+    Typeface dys;
+
     private EditText name;
     private  EditText Region;
 
@@ -51,6 +54,25 @@ public class GmailRegisteration extends AppCompatActivity {
         Region = (EditText) findViewById(R.id.Region);
         register = (Button) findViewById(R.id.register);
 
+        global abc = (global) getApplicationContext();
+        if(abc.getDyslexic()==0||abc.getDyslexic()==2||abc.getDyslexic()==4||abc.getDyslexic()==6||abc.getDyslexic()==8||abc.getDyslexic()==10||abc.getDyslexic()==12||abc.getDyslexic()==14||abc.getDyslexic()==16||abc.getDyslexic()==18||abc.getDyslexic()==20||abc.getDyslexic()==22||abc.getDyslexic()==24||abc.getDyslexic()==26||abc.getDyslexic()==28||abc.getDyslexic()==30||abc.getDyslexic()==32||abc.getDyslexic()==34) {
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
+            name.setTypeface(dys);
+            Region.setTypeface(dys);
+            register.setTypeface(dys);
+
+
+        }else{
+
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/dyslexic.ttf");
+            name.setTypeface(dys);
+            Region.setTypeface(dys);
+            register.setTypeface(dys);
+        }
+
+
         agent = new Agent();
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -69,17 +91,25 @@ public class GmailRegisteration extends AppCompatActivity {
                 Global.setName(name.getText().toString());
                 Global.setRegion(Region.getText().toString());
 
+                try {
 
-                userid = Global.getEmail();
-                userid = userid.replace(".","%");
+                    userid = Global.getEmail();
+                    userid = userid.replace(".","%");
+
+                }catch(NullPointerException ignored){Log.i("abc",ignored.toString());}
+
+
 
 
 
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        getDetails();
-                        ref.child(userid).setValue(agent);
+                        try {
+                            getDetails();
+                            ref.child(userid).setValue(agent);
+                        }catch (NullPointerException ignored){Log.i("bnh","mkj");}
+
                         startActivity(new Intent(GmailRegisteration.this,Dashboard.class));
                         finish();
 
@@ -130,13 +160,15 @@ public class GmailRegisteration extends AppCompatActivity {
 
         global Globe = (global) getApplicationContext();
 
-        agent.setName(name.getText().toString());
+        try {
+            agent.setName(name.getText().toString());
+
         agent.setEmail(Globe.getEmail().toString());
         agent.setState(Region.getText().toString());
         agent.setPhone("1234567890");
         agent.setPoints(Globe.getPoints());
         agent.setLead(Globe.getLead());
-        agent.setLeadConverted(Globe.getLeadConverted());
+        agent.setLeadConverted(Globe.getLeadConverted());}catch (NullPointerException ig){Log.i("abc","def");}
 
     }
 

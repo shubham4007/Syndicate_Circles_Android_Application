@@ -16,11 +16,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Lead_information"></activity>
+        <activity android:name=".Leaderboards" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:scheme="https"
+                    android:host="www.synd.page.link"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:scheme="http"
+                    android:host="www.synd.page.link"></data>
             </intent-filter>
         </activity>
         <activity android:name=".Product_catalouge" />
@@ -28,12 +44,14 @@
         <activity android:name=".otpRegisteration" />
         <activity android:name=".Registration" />
         <activity android:name=".Enquiry" />
-        <activity android:name=".Lead" />
+        <activity android:name=".Lead" >
+
+        </activity>
         <activity android:name=".Challenges" />
         <activity android:name=".Dashboard" />
         <activity android:name=".authentication" />
         <activity android:name=".profile" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

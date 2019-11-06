@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -57,6 +58,11 @@ public class authentication extends AppCompatActivity {
     private Button signOutButton;
     private Button button3;
 
+    TextView text1;
+    TextView text2;
+    TextView c1;
+    TextView c2;
+
     private EditText phoneNum;
     private PinView verifyCodeET;
     private TextView phonenumberText;
@@ -71,6 +77,7 @@ public class authentication extends AppCompatActivity {
     String email;
     String phone;
     String Gmailshow;
+    Typeface dys;
 
     @SuppressLint("SetTextI18n")
 
@@ -92,7 +99,43 @@ public class authentication extends AppCompatActivity {
         verifyCodeET = (PinView) findViewById(R.id.pinView);
         phonenumberText = (TextView) findViewById(R.id.phonenumberText);
 
-        final global global = (global) getApplicationContext();
+        final global abc = (global) getApplicationContext();
+
+        text1 = findViewById(R.id.text1);
+        text2 = findViewById(R.id.text2);
+        c1 = findViewById(R.id.c1);
+        c2 = findViewById(R.id.c2);
+
+        if(abc.getDyslexic()==0||abc.getDyslexic()==2||abc.getDyslexic()==4||abc.getDyslexic()==6||abc.getDyslexic()==8||abc.getDyslexic()==10||abc.getDyslexic()==12||abc.getDyslexic()==14||abc.getDyslexic()==16||abc.getDyslexic()==18||abc.getDyslexic()==20||abc.getDyslexic()==22||abc.getDyslexic()==24||abc.getDyslexic()==26||abc.getDyslexic()==28||abc.getDyslexic()==30||abc.getDyslexic()==32||abc.getDyslexic()==34) {
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
+            text1.setTypeface(dys);
+            sendCodeButton.setTypeface(dys);
+            text2.setTypeface(dys);
+            phoneNum.setTypeface(dys);
+            c1.setTypeface(dys);
+            c2.setTypeface(dys);
+            phonenumberText.setTypeface(dys);
+            verifyCodeButton.setTypeface(dys);
+            verifyCodeET.setTypeface(dys);
+
+        }else{
+
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/dyslexic.ttf");
+            text1.setTypeface(dys);
+            text2.setTypeface(dys);
+            phoneNum.setTypeface(dys);
+            sendCodeButton.setTypeface(dys);
+            c1.setTypeface(dys);
+            c2.setTypeface(dys);
+            phonenumberText.setTypeface(dys);
+            verifyCodeButton.setTypeface(dys);
+            verifyCodeET.setTypeface(dys);
+        }
+
+
+
 
 
         layout1.setVisibility(View.VISIBLE);
@@ -103,7 +146,7 @@ public class authentication extends AppCompatActivity {
 
                 String phoneNumber = "+91"+phoneNum.getText().toString();
                 phonenumberText.setText(phoneNumber);
-                global.setNumber(phoneNumber);
+                abc.setNumber(phoneNumber);
 
                 if (TextUtils.isEmpty(phoneNumber)) {
                     phoneNum.setError("Enter a Phone Number");

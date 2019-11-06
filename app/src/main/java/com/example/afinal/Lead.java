@@ -4,11 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Region;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Lead extends AppCompatActivity {
 
@@ -27,6 +33,11 @@ public class Lead extends AppCompatActivity {
     DatabaseReference ref,ref2;
     Leads lead;
     Agent agent;
+    int count ;
+
+    Typeface dys;
+    TextView c1;
+    Button submit;
 
     EditText Name;
     EditText Email;
@@ -44,6 +55,7 @@ public class Lead extends AppCompatActivity {
         startActivity(new Intent(Lead.this,Dashboard.class));
         //Add the OnBackPressed into Other activity when the BackPressed
         overridePendingTransition(R.anim.goup, R.anim.godown);
+
     }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +64,8 @@ public class Lead extends AppCompatActivity {
        Name  = (EditText) findViewById(R.id.CustomerName);
        Email = (EditText) findViewById(R.id.email);
        Age   = (EditText) findViewById(R.id.age);
+       c1 = findViewById(R.id.c1);
+       submit = findViewById(R.id.button);
 
        ProductReffered = (EditText) findViewById(R.id.ProductRefered);
         database = FirebaseDatabase.getInstance();
@@ -59,6 +73,30 @@ public class Lead extends AppCompatActivity {
 
         lead = new Leads();
         agent = new Agent();
+
+        global abc = (global) getApplicationContext();
+        if(abc.getDyslexic()==0||abc.getDyslexic()==2||abc.getDyslexic()==4||abc.getDyslexic()==6||abc.getDyslexic()==8||abc.getDyslexic()==10||abc.getDyslexic()==12||abc.getDyslexic()==14||abc.getDyslexic()==16||abc.getDyslexic()==18||abc.getDyslexic()==20||abc.getDyslexic()==22||abc.getDyslexic()==24||abc.getDyslexic()==26||abc.getDyslexic()==28||abc.getDyslexic()==30||abc.getDyslexic()==32||abc.getDyslexic()==34) {
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
+            Name.setTypeface(dys);
+            Email.setTypeface(dys);
+            Age.setTypeface(dys);
+            c1.setTypeface(dys);
+            submit = findViewById(R.id.button);
+
+
+
+        }else{
+
+
+            dys = Typeface.createFromAsset(getAssets(), "fonts/dyslexic.ttf");
+            Name.setTypeface(dys);
+            Email.setTypeface(dys);
+            Age.setTypeface(dys);
+            c1.setTypeface(dys);
+            submit = findViewById(R.id.button);
+
+        }
 
 
     }
@@ -120,6 +158,9 @@ public class Lead extends AppCompatActivity {
         lead.setRefer(gb.getName());
         lead.setProduct(ProductReffered.getText().toString());
         lead.setDate(Date);
+        lead.setCheck(gb.getLeadConverted());
+
+
 
 
     }
@@ -129,6 +170,42 @@ public class Lead extends AppCompatActivity {
         if (!validateEmail() | !validateName() | !validateUserAge()) {
             return;
         }
+
+
+        global g = (global) getApplicationContext();
+
+        count = g.getLeadcount()+1;
+        g.setLeadcount(count);
+
+        if(count==0){
+
+            g.setLeadname(Name.getText().toString());
+            g.setLeadage(Age.getText().toString());
+            g.setLeademail(Email.getText().toString());
+            g.setLeadproduct(ProductReffered.getText().toString());
+
+        }else if(count==1){
+
+            g.setLeadname2(Name.getText().toString());
+            g.setLeadage2(Age.getText().toString());
+            g.setLeademail2(Email.getText().toString());
+            g.setLeadproduct2(ProductReffered.getText().toString());
+
+        }else if(count ==2){
+
+            g.setLeadname3(Name.getText().toString());
+            g.setLeadage3(Age.getText().toString());
+            g.setLeademail3(Email.getText().toString());
+            g.setLeadproduct3(ProductReffered.getText().toString());
+
+        }
+
+
+
+
+        global globe = (global) getApplicationContext();
+
+
 
         userid = Email.getText().toString();
         userid = userid.replace(".","%");
@@ -149,7 +226,7 @@ public class Lead extends AppCompatActivity {
             }
         });
 
-        global globe = (global) getApplicationContext();
+
         x = globe.getLead();
         y = Integer.parseInt(x);
         y=y+1;
@@ -157,6 +234,9 @@ public class Lead extends AppCompatActivity {
         globe.setLead(Integer.toString(y));
         Log.i("lead",Integer.toString(y));
         Log.i("lead",globe.getLead());
+
+
+
 
         agentemail = globe.getEmail();
         agentemail = agentemail.replace(".","%");
@@ -169,6 +249,10 @@ public class Lead extends AppCompatActivity {
         Log.i("lead",globe.getLead());
 
         updateData.child("lead").setValue(globe.getLead());
+
+
+
+
 
         startActivity(new Intent(Lead.this,Dashboard.class));
         //Add the OnBackPressed into Other activity when the BackPressed

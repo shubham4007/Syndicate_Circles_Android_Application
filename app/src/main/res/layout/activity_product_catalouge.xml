@@ -50,6 +50,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/c1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -57,6 +58,7 @@
                                 android:text="Current/Saving Account(CASA)"/>
 
                             <TextView
+                                android:id="@+id/c2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/savings"
@@ -68,6 +70,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/c3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
@@ -147,6 +150,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/c4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -154,6 +158,7 @@
                                 android:text="Retail Loans"/>
 
                             <TextView
+                                android:id="@+id/c5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/retailLoan"
@@ -166,7 +171,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
-
+                                    android:id="@+id/c6"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
@@ -179,6 +184,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/c7"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textStyle="bold"
@@ -245,6 +251,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/c8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -253,6 +260,7 @@
 
 
                             <TextView
+                                android:id="@+id/c9"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/agriculturalLoan"
@@ -265,7 +273,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
-
+                                    android:id="@+id/c10"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
@@ -278,7 +286,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
-
+                                        android:id="@+id/c11"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingLeft="10dp"
@@ -346,6 +354,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/c12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -354,6 +363,7 @@
 
 
                             <TextView
+                                android:id="@+id/c13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/educationalLoan"
@@ -366,6 +376,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/c14"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
@@ -378,7 +389,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
-
+                                        android:id="@+id/c15"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:padding="10dp"
@@ -386,7 +397,6 @@
                                         android:text="PRIORITY :"/>
 
                                     <TextView
-
                                         android:id="@+id/educationalloans"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -446,6 +456,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/c16"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"

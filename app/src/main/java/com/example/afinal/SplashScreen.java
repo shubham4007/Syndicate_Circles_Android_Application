@@ -3,11 +3,16 @@ package com.example.afinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private int SLEEP_TIMER = 3;
+    private int SLEEP_TIMER = 2  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,19 @@ public class SplashScreen extends AppCompatActivity {
 
         LogoLauncher logoLauncher = new LogoLauncher();
         logoLauncher.start();
+
+        Uri uri = Uri.parse("abcd");
+        uri = getIntent().getData();
+        if(uri!=null){
+            Log.i("abcdef",uri.toString());
+            List<String> params = uri.getPathSegments();
+           global abc = (global) getApplicationContext();
+           abc.setDeep_link(1);
+
+        }
+
+
+
     }
 
     private class LogoLauncher extends Thread{
